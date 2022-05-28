@@ -12,24 +12,13 @@ void setup() {
   lcd.print("LCD1602");  // Print a message to the LCD
   lcd.setCursor(6, 1); // set the cursor to column 2, line 1
   lcd.print("Animation");  // Print a message to the LCD.
-  drawHLine(0, 0, 40);
-  drawHLine(0, 7, 40);
-  drawVLine(0, 0, 7);
-  drawVLine(39, 0, 7);
-  hexDump(charmap, 64);
-  refreshMap();
-  displayMap(0, 0);
-  delay(1000);
 }
 
 void loop() {
   uint8_t startX = 0;
   for (uint8_t y = 1; y < 7; y++) {
     cls();
-    drawHLine(0, 0, 40);
-    drawHLine(0, 7, 40);
-    drawVLine(0, 0, 7);
-    drawVLine(39, 0, 7);
+    drawBox(0, 0, 40, 8);
     drawHLine((startX + 5 * y) % 35, y, 5);
     refreshMap();
     displayMap(0, 0);
@@ -37,10 +26,7 @@ void loop() {
   }
   delay(1000);
   cls();
-  drawHLine(0, 0, 40);
-  drawHLine(0, 7, 40);
-  drawVLine(0, 0, 7);
-  drawVLine(39, 0, 7);
+  drawBox(0, 0, 40, 8);
   for (uint8_t y = 2; y < 7; y += 2) {
     setPixel(2, y);
     refreshMap();
