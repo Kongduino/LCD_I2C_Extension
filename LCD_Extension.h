@@ -4,6 +4,7 @@ void displayMap(uint8_t, uint8_t, uint8_t, uint8_t);
 void hexDump(uint8_t* buf, uint16_t len) {
   // Something similar to the Unix/Linux hexdump -C command
   // Pretty-prints the contents of a buffer, 16 bytes a row
+  // I use to debug :-) Like a super printf.
   char alphabet[17] = "0123456789abcdef";
   uint16_t i, index;
   Serial.print(F("   +------------------------------------------------+ +----------------+\n"));
